@@ -96,7 +96,8 @@ class yiiwymeditor extends BaseWidget
 	*/
 	public function run()
 	{
-		return $this->render(Html::activeTextarea($this->model, $this->attribute, $this->inputOptions));
+		$options = array_merge($this->options,$this->inputOptions);
+		echo Html::activeTextarea($this->model, $this->attribute, $options);
 		$this->registerPlugin();
 	}
 
@@ -129,4 +130,3 @@ class yiiwymeditor extends BaseWidget
 	}
 
 }
-
