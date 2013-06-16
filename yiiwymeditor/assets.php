@@ -2,11 +2,10 @@
 
 return array(
 	'yiiwymeditor/core' => array(
-		'sourcePath' => __DIR__ . '/assets/wymeditor',
+		'sourcePath' => __DIR__ . '/assets',
 		'js' => array(
-			'core.js',
+			'jquery.wymeditor.js',
 			'skins/default/skin.js',
-			'editor/base.js'
 		),
 		'css' => array(
 			'skins/default/skin.css'
