@@ -44,8 +44,8 @@ class yiiwymeditor extends BaseWidget
 	/**
 	 * @var array the HTML attributes for the widget container tag.
 	 */
-	public $options = array();
-	
+	public $inputOptions = array();
+
 	/**
 	 * @var array the HTML attributes for the widget container tag.
 	 */
@@ -83,8 +83,8 @@ class yiiwymeditor extends BaseWidget
 	 */
 	public function run()
 	{
-		echo Html::beginTag('div', $this->options) . "\n";
-		echo Html::endTag('div')."\n";
+		$options = array_merge($this->inputOptions, $options);
+		return $this->render(Html::activeTextarea($this->model, $this->attribute, $options));
 		$this->registerPlugin();
 	}
 
@@ -95,7 +95,6 @@ class yiiwymeditor extends BaseWidget
 	protected function registerPlugin()
 	{		
 		$id = $this->options['id'];
-		$scope = $this->scope;
 		
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
@@ -104,7 +103,7 @@ class yiiwymeditor extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "$('#$id').tableOfContents('$scope',$cleanOptions)";
+		$js[] = "jQuery('#$id').wymeditor();";
 		
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}
