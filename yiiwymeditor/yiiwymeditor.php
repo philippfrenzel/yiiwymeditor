@@ -96,8 +96,7 @@ class yiiwymeditor extends BaseWidget
 	*/
 	public function run()
 	{
-		$options = array_merge($this->inputOptions, $options);
-		return $this->render(Html::activeTextarea($this->model, $this->attribute, $options));
+		return $this->render(Html::activeTextarea($this->model, $this->attribute, $this->inputOptions));
 		$this->registerPlugin();
 	}
 
