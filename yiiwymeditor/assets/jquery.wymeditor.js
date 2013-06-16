@@ -4620,13 +4620,11 @@ WYMeditor.editor.prototype.init = function () {
         sContainer,
         oContainer;
 
-    if (jQuery.browser.msie) {
+    if (navigator.userAgent.match(/msie/i)) {
         WymClass = new WYMeditor.WymClassExplorer(this);
-    } else if (jQuery.browser.mozilla) {
+    } else if (navigator.userAgent.match(/mozilla/i)) {
         WymClass = new WYMeditor.WymClassMozilla(this);
-    } else if (jQuery.browser.opera) {
-        WymClass = new WYMeditor.WymClassOpera(this);
-    } else if (jQuery.browser.safari) {
+    } else if (navigator.userAgent.match(/webkit/i)) {
         WymClass = new WYMeditor.WymClassSafari(this);
     }
 
@@ -4983,7 +4981,7 @@ WYMeditor.editor.prototype.selected = function () {
         caretPos;
 
     if (node) {
-        if (jQuery.browser.msie) {
+        if (navigator.userAgent.match(/msie/i)) {
             if (sel.isCollapsed && node.tagName && node.tagName.toLowerCase() === 'body') {
                 // For collapsed selections, we have to use the ghetto "caretPos"
                 // hack to find the selection, otherwise it always says that the
@@ -7081,12 +7079,12 @@ WYMeditor.WymClassExplorer.prototype.initIframe = function (iframe) {
     jQuery(this._doc).bind('keyup', wym.keyup);
     // Workaround for an ie8 => ie7 compatibility mode bug triggered
     // intermittently by certain combinations of CSS on the iframe
-    var ieVersion = parseInt(jQuery.browser.version, 10);
-    if (ieVersion >= 8 && ieVersion < 9) {
-        jQuery(this._doc).bind('keydown', function () {
-            wym.fixBluescreenOfDeath();
-        });
-    }
+    //var ieVersion = parseInt(jQuery.browser.version, 10);
+    //if (ieVersion >= 8 && ieVersion < 9) {
+    //    jQuery(this._doc).bind('keydown', function () {
+    //        wym.fixBluescreenOfDeath();
+    //    });
+    //}
     this._doc.onkeyup = function () {
         wym.saveCaret();
     };
@@ -7322,7 +7320,7 @@ WYMeditor.WymClassExplorer.prototype.spaceBlockingElements = function () {
         if ($firstChild.is(blockingSelector)) {
             $firstChild.before(placeholderNode);
         }
-        if (jQuery.browser.version >= "7.0" && $lastChild.is(blockingSelector)) {
+        if ($lastChild.is(blockingSelector)) {
             $lastChild.after(placeholderNode);
         }
     }
@@ -7366,8 +7364,7 @@ WYMeditor.WymClassMozilla = function (wym) {
 WYMeditor.WymClassMozilla.CELL_PLACEHOLDER = '<br _moz_dirty="">';
 
 // Firefox 3.5 and 3.6 require the CELL_PLACEHOLDER and 4.0 doesn't
-WYMeditor.WymClassMozilla.NEEDS_CELL_FIX = jQuery.browser.version >= '1.9.1' &&
-    jQuery.browser.version < '2.0';
+WYMeditor.WymClassMozilla.NEEDS_CELL_FIX = false;
 
 WYMeditor.WymClassMozilla.prototype.initIframe = function (iframe) {
     var wym = this,
@@ -7927,14 +7924,6 @@ WYMeditor.WymClassSafari.prototype.keyup = function (evt) {
         name;
 
     wym._selected_image = null;
-
-    // Fix to allow shift + return to insert a line break in older safari
-    if (jQuery.browser.version < 534.1) {
-        // Not needed in AT MAX chrome 6.0. Probably safe earlier
-        if (evt.keyCode === WYMeditor.KEY.ENTER && evt.shiftKey) {
-            wym._exec('InsertLineBreak');
-        }
-    }
 
     if (evt.keyCode !== WYMeditor.KEY.BACKSPACE &&
             evt.keyCode !== WYMeditor.KEY.CTRL &&
