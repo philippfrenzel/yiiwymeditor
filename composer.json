@@ -1,7 +1,7 @@
 {
-	"name": "philippfrenzel/yiidhtmlx",
+	"name": "philippfrenzel/yiiwymeditor",
 	"description": "Yii2 DHTMLX Widgets",
-	"keywords": ["yii", "framework","dhtmlx"],
+	"keywords": ["yii", "framework","wymeditor"],
 	"homepage": "http://www.frenzel.net/",
 	"type": "library",
 	"license": "BSD-3-Clause",
@@ -14,13 +14,13 @@
 		}
 	],
 	"support": {
-		"source": "https://github.com/philippfrenzel/yiidhtmlx"
+		"source": "https://github.com/philippfrenzel/yiiwymeditor"
 	},
 	"minimum-stability": "dev",
 	"require": {
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-0": { "yiidhtmlx\\": "/" }
+		"psr-0": { "yiiwymeditor\\": "/" }
 	}
 }
