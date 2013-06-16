@@ -42,6 +42,15 @@ class yiiwymeditor extends BaseWidget
 	public $value;
 
 	/**
+	* @var array the HTML attributes (name-value pairs) for the field container tag.
+	* The values will be HTML-encoded using [[Html::encode()]].
+	* If a value is null, the corresponding attribute will not be rendered.
+	*/
+	public $options = array(
+		'class' => 'control-group',
+	);
+
+	/**
 	 * @var array the HTML attributes for the widget container tag.
 	 */
 	public $inputOptions = array();
