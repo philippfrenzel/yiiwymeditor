@@ -74,13 +74,6 @@ class yiiwymeditor extends BaseWidget
 		//checks for the element id
 		if (!isset($this->options['id'])) {
 			$this->options['id'] = $this->getId();
-		}		
-
-		/**
-		* @param startLevel the heading to start with, default is 1
-		*/
-		if (!isset($this->clientOptions['startLevel'])) {
-			$this->clientOptions['startLevel'] = '1';
 		}
 
 		parent::init();
@@ -107,7 +100,7 @@ class yiiwymeditor extends BaseWidget
 	*/
 	protected function registerPlugin()
 	{		
-		$id = $this->options['id'];
+		$replaceId = $this->model->formName().'['.$this->attribute.']';
 		
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
@@ -116,7 +109,7 @@ class yiiwymeditor extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "CKEDITOR.replace('#$id',$cleanOptions);";
+		$js[] = "CKEDITOR.replace('$replaceId',$cleanOptions);";
 		
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}
