@@ -79,8 +79,12 @@ class yiiwymeditor extends BaseWidget
 	}
 
 	/**
-	 * Renders the widget.
-	 */
+	* Renders a field containing a text area.
+	* The model attribute value will be used as the content in the textarea.
+	* @param array $options the tag options in terms of name-value pairs. These will be rendered as
+	* the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
+	* @return string the rendering result
+	*/
 	public function run()
 	{
 		$options = array_merge($this->inputOptions, $options);
