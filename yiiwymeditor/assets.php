@@ -4,13 +4,10 @@ return array(
 	'yiiwymeditor/core' => array(
 		'sourcePath' => __DIR__ . '/assets',
 		'js' => array(
-			'jquery.wymeditor.js',			
-			'jquery.rdfquery.rdfa.min-1.0.js',			
-			'skins/default/skin.js',
+			'ckeditor.js',
 		),
 		'css' => array(
-			'skins/default/skin.css',
-			'jquery.ui.resizable.css',
+			'skins/moono/editor.css',
 		)
 	)
 );

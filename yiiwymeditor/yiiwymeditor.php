@@ -116,7 +116,7 @@ class yiiwymeditor extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "jQuery('#$id').wymeditor();";
+		$js[] = "CKEDITOR.replace('#$id',$cleanOptions);";
 		
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}
