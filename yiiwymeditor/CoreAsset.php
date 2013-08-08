@@ -20,16 +20,3 @@ class CoreAsset extends AssetBundle
     public $depends = array(
     );
 }
-
-
-return array(
-	'yiiwymeditor/core' => array(
-		'sourcePath' => __DIR__ . '/assets',
-		'js' => array(
-			''
-		),
-		'css' => array(
-			,
-		)
-	)
-);
