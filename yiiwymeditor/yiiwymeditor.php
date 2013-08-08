@@ -101,10 +101,13 @@ class yiiwymeditor extends BaseWidget
 	protected function registerPlugin()
 	{		
 		$replaceId = $this->model->formName().'['.$this->attribute.']';
-		
+
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
-		$view->registerAssetBundle("yiiwymeditor/core");
+
+		/** @var \yii\web\AssetBundle $assetClass */
+		$assetClass = 'yiiwymeditor\\CoreAsset';
+		$assetClass::register($view);
 
 		$js = array();
 		
