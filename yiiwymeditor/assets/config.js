@@ -11,9 +11,9 @@ CKEDITOR.editorConfig = function( config ) {
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker', 'iframe' ] },
 		{ name: 'links' },
-		{ name: 'insert', 'iframe' },
+		{ name: 'insert' },
 		{ name: 'forms' },
 		{ name: 'tools' },
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
