@@ -34,7 +34,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.format_tags = 'p;h1;h2;h3;h4;pre';
 
 	//add the extra plugins
-	config.extraPlugins = 'syntaxhighlight, allmedias';
+	config.extraPlugins = 'syntaxhighlight';
 
 	// Make dialogs simpler.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
