@@ -35,6 +35,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	//add the extra plugins
 	config.extraPlugins = 'syntaxhighlight';
+	config.extraPlugins = 'allmedias';
 
 	// Make dialogs simpler.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
