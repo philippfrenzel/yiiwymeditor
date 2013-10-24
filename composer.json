@@ -22,5 +22,8 @@
 	},
 	"autoload": {
 		"psr-0": { "yiiwymeditor\\": "/" }
-	}
+	},
+	"extra": {
+          "bootstrap": "yiiwymeditor\\Extension"
+  }
 }
