@@ -17,7 +17,7 @@ namespace yiiwymeditor;
 
 use Yii;
 use yii\base\Model;
-use yii\base\View;
+use yii\web\View;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\base\Widget as BaseWidget;
