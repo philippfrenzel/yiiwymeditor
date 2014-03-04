@@ -112,8 +112,21 @@ class yiiwymeditor extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "CKEDITOR.replace('$replaceId',$cleanOptions);";
-		
+		$js[] = "CKEDITOR.replace('$replaceId',$cleanOptions,";
+		$js[] = "on: {";
+	  $js[] = "      instanceReady: function() {";
+	  $js[] = "          this.dataProcessor.htmlFilter.addRules( {";
+	  $js[] = "              elements: {";
+	  $js[] = "                  img: function( el ) {";
+	  $js[] = "                      if ( !el.attributes.class )";
+	  $js[] = "                          el.attributes.class = 'pinterest-image';";
+	  $js[] = "                  }";
+	  $js[] = "              }";
+	  $js[] = "          } );";          
+	  $js[] = "      }";
+	  $js[] = "  }";
+		$js[] = "}";
+		$js[] = ");";
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}
 
