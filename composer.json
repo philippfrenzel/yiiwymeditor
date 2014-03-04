@@ -1,6 +1,6 @@
 {
 	"name": "philippfrenzel/yiiwymeditor",
-	"description": "Yii2 DHTMLX Widgets",
+	"description": "Yii2 yiiwymeditor Widgets",
 	"keywords": ["yii", "framework","wymeditor"],
 	"homepage": "http://www.frenzel.net/",
 	"type": "yii2-extension",
@@ -23,7 +23,5 @@
 	"autoload": {
 		"psr-0": { "yiiwymeditor\\": "/" }
 	},
-	"extra": {
-          "bootstrap": "yiiwymeditor\\Extension"
-  }
+	"target-dir": "yiiwymeditor"
 }
