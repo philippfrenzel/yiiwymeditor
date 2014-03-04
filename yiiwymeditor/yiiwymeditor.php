@@ -106,9 +106,8 @@ class yiiwymeditor extends BaseWidget
 		$view = $this->getView();
 
 		/** @var \yii\web\AssetBundle $assetClass */
-		$assetClass = 'yiiwymeditor\\CoreAsset';
-		$assetClass::register($view);
-
+		CoreAsset::register($view);
+		
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);

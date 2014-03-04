@@ -10,12 +10,12 @@ use yii\web\AssetBundle;
 
 class CoreAsset extends AssetBundle
 {
-    public $sourcePath = '@yiiwymeditor/assets';
+    public $sourcePath = '@yiiwymeditor/yiiwymeditor/assets';
     public $css = array(
     	'skins/moono/editor.css'
     );
     public $js = array(
-        'ckeditor.js'
+      'ckeditor.js'
     );
     public $depends = array(
     );
