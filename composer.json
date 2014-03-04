@@ -21,7 +21,7 @@
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-0": { "yiiwymeditor\\": "" }
+		"psr-0": { "philippfrenzel\\yiiwymeditor\\": "" }
 	},
-	"target-dir": "yiiwymeditor/yiiwymeditor"
+	"target-dir": "philippfrenzel/yiiwymeditor"
 }

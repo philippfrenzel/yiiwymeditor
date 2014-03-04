@@ -13,7 +13,7 @@
  * @license Open Sourced under the MIT License
  */
 
-namespace yiiwymeditor;
+namespace philippfrenzel\yiiwymeditor;
 
 use Yii;
 use yii\base\Model;
