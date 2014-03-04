@@ -21,7 +21,7 @@
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-0": { "yiiwymeditor\\yiiwymeditor\\": "" }
+		"psr-0": { "yiiwymeditor\\": "" }
 	},
 	"target-dir": "yiiwymeditor/yiiwymeditor"
 }
