@@ -113,7 +113,7 @@ class yiiwymeditor extends BaseWidget
 		$cleanOptions = Json::encode($this->clientOptions);
 		$js[] = "CKEDITOR.replace('$replaceId',$cleanOptions,";
 		$js[] = "on: {";
-	  $js[] = "      instanceReady: function() {";
+	  $js[] = "  instanceReady: function() {";
 	  $js[] = "          this.dataProcessor.htmlFilter.addRules( {";
 	  $js[] = "              elements: {";
 	  $js[] = "                  img: function( el ) {";
