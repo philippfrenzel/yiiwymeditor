@@ -11,3 +11,17 @@ Will use this editor inside our internal company intranet, as it's very importan
 We 1st thought about creole, but for none IT - Users, it was to "abstract" to work with that :(
 
 Anyway, hope you can use it for your own project!
+
+$js[] = "on: {";
+$js[] = "  instanceReady: function() {";
+$js[] = "          this.dataProcessor.htmlFilter.addRules( {";
+$js[] = "              elements: {";
+$js[] = "                  img: function( el ) {";
+$js[] = "                      if ( !el.attributes.class )";
+$js[] = "                          el.attributes.class = 'pinterest-image';";
+$js[] = "                  }";
+$js[] = "              }";
+$js[] = "          } );";          
+$js[] = "      }";
+$js[] = "  }";
+$js[] = "}";
